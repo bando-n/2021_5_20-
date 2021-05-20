@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myMemoPad中級</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title_box_title">チョコmemory</h1>
+    </header>
+    <main>
+        <input type="text" id="input">
+        <textarea id="text_area"></textarea>
+        <ul>
+            <li id="save">Save</li>
+            <li id="clear">Clear</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>G's</small>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //1.Save クリックイベント
+        $('#save').on('click', function () {
+            const data = {
+                title: $('#input').val(),
+                text: $('#text_area').val(),
+            };
+            console.log(data);
+            const jsonData = JSON.stringify(data);
+            console.log(jsonData);
+            localStorage.setItem('memo', jsonData);
+        });
+        //2.clear クリックイベント
+        $('#clear').on('click', function () {
+            localStorage.removeItem('memo');
+            $('#text_area').val('');
+        });
+        //3.ページ読み込み：保存データ取得表示
+        if (localStorage.getItem('memo')) {
+            const jsonData = localStorage.getItem('memo');
+            console.log(jsonData);
+            const data = JSON.parse(jsonData);
+            console.log(data);
+            $('#input').val(data.title);
+            $('#text_area').val(data.text);
+        }
+    </script>
+    <div class="main_list">
+
+        <div>
+            <div class="inline-block_test">
+                1_今泉雅彦
+                <main>
+                    <input type="text" id="input">
+                    <textarea id="text_area"></textarea>
+                    <ul>
+                        <li id="save">Save</li>
+                        <li id="clear">Clear</li>
+
+                    </ul>
+                </main>
+            </div>
+        </div>
+        <div class="inline-block_test">
+            2_大谷恵子
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            3_勝川恭平
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            4_川瀬慶子
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            5_小石大介
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            6_古賀隆次
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            7_重松啓子
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+    </div>
+    <div>
+        <div class="inline-block_test">
+            8_高橋玲奈
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            9_中尾香輔
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            10_難波佳代子
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            11_坂藤範明
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            13_馬田直明
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            14_渡隆人
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+        <div class="inline-block_test">
+            15_石丸真子
+            <main>
+                <input type="text" id="input">
+                <textarea id="text_area"></textarea>
+                <ul>
+                    <li id="save">Save</li>
+                    <li id="clear">Clear</li>
+                </ul>
+            </main>
+        </div>
+    </div>
+    <div class="inline-block_test">
+        L_taroosg
+        <main>
+            <input type="text" id="input">
+            <textarea id="text_area"></textarea>
+            <ul>
+                <li id="save">Save</li>
+                <li id="clear">Clear</li>
+            </ul>
+        </main>
+    </div>
+    <div class="inline-block_test">
+        G's_おかださち
+        <main>
+            <input type="text" id="input">
+            <textarea id="text_area"></textarea>
+            <ul>
+                <li id="save">Save</li>
+                <li id="clear">Clear</li>
+            </ul>
+        </main>
+    </div>
+    <div class="inline-block_test">
+        G's_古賀一成
+        <main>
+            <input type="text" id="input">
+            <textarea id="text_area"></textarea>
+            <ul>
+                <li id="save">Save</li>
+                <li id="clear">Clear</li>
+            </ul>
+        </main>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
